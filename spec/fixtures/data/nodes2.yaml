@@ -1,0 +1,10 @@
+---
+  dc4-server03:
+    environment: production
+    role: roles::puppet::master
+    classes:
+      - base
+    parameters:
+      rack: R5
+  ^(dc4|dc5)-server04:
+    role: roles::puppet::master

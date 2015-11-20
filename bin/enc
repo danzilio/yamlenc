@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+$:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
+require 'enc'
+
+lookup = Enc::Cli.new(ARGV)
+
+if lookup.found
+  puts lookup.found.to_yaml
+  exit 0
+elsif lookup.options[:fail]
+  STDERR.puts 'No node found.'
+  exit 1
+else
+  puts '{}'
+  exit 0
+end
