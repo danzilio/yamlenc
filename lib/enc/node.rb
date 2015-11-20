@@ -48,7 +48,7 @@ module Enc
         @classes << role unless @classes.include?(role)
       end
 
-      return @classes
+      @classes
     end
 
     # Return the parameters hash. Checks if a role class has been delcared via
@@ -61,11 +61,11 @@ module Enc
     def parameters
       if role
         role_parameter = role.gsub(/^roles::/, '').gsub(/::/, '/')
-        @parameters = {'role' => role_parameter} unless @parameters
+        @parameters = { 'role' => role_parameter } unless @parameters
         @parameters['role'] = role_parameter
       end
 
-      return @parameters
+      @parameters
     end
 
     private
@@ -81,7 +81,7 @@ module Enc
       nodes.keys.each do |k|
         return nodes[k] if name == k || name.match(k)
       end
-      return nil
+      nil
     end
 
     # Takes a key name, and data type and ensures that the data in nodes[key] is
@@ -94,7 +94,7 @@ module Enc
     # @param type [Object] a data type to check for
     # @return [Object, nil] returns the data of 'type' or nil if the value is empty
     def validate(key, type)
-      return nil unless node and node.has_key?(key)
+      return nil unless node && node.key?(key)
       fail "#{key.capitalize} must be a #{type}!" unless node[key].is_a?(type)
       return node[key] unless node[key].empty?
     end
@@ -108,7 +108,7 @@ module Enc
       node_hash['environment'] = environment if environment
       node_hash['classes'] = classes if classes
       node_hash['parameters'] = parameters if parameters
-      return node_hash
+      node_hash
     end
   end
 end

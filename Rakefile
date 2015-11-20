@@ -5,7 +5,7 @@ require 'cucumber/rake/task'
 require 'rspec/core/rake_task'
 require 'bundler/gem_tasks'
 
-CLEAN.include("pkg/", "tmp/")
+CLEAN.include('pkg/', 'tmp/')
 
 $LOAD_PATH.unshift(File.expand_path('../lib', __FILE__))
 require 'enc/version'
@@ -21,10 +21,10 @@ module Enc
 end
 EOS
 
-  File.open("lib/enc/version.rb", "w") do |file|
+  File.open('lib/enc/version.rb', 'w') do |file|
     file.print s
   end
-  sh "git add lib/enc/version.rb"
+  sh 'git add lib/enc/version.rb'
   sh "git commit -m 'Bump version'"
 end
 
@@ -34,8 +34,8 @@ task :tag do
 
   unless tags.include?("refs/tags/#{v}\n")
     sh "git tag #{v}" unless `git tag`.split("\n").include?(v)
-    sh "git push origin --tags"
+    sh 'git push origin --tags'
   end
 end
 
-task :default => [:spec, :cucumber]
+task default: [:spec, :cucumber]

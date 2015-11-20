@@ -7,7 +7,7 @@ module Enc
     attr_reader :node_name, :found
 
     def initialize(argv)
-      @options = { :config_file => '/etc/puppet/enc.yaml', :cli_nodes => Array.new, :fail => false }
+      @options = { config_file: '/etc/puppet/enc.yaml', cli_nodes: [], fail: false }
 
       optparse.parse!(argv)
 
@@ -58,7 +58,7 @@ module Enc
         collection += Dir["#{node}/*.yaml"].sort if File.directory?(node)
       end
 
-      return collection
+      collection
     end
 
     def cli_nodes

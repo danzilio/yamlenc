@@ -68,7 +68,6 @@ describe Enc::Node do
     end
   end
 
-
   context 'when looking up a node that does not exist in the data' do
     let(:name) { 'dc1-server09' }
 

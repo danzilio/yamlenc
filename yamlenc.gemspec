@@ -24,5 +24,5 @@ Gem::Specification.new do |s|
   s.authors = ['David Danzilio']
   s.email = 'ddanzilio@constantcontact.com'
 
-  s.test_files    = Dir.glob("spec/**/*")
+  s.test_files = Dir.glob('spec/**/*')
 end

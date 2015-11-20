@@ -1,0 +1,11 @@
+language: ruby
+sudo: false
+script:
+  - bundle exec rake spec
+  - bundle exec rake cucumber
+rvm:
+  - 1.8.7
+  - 1.9.3
+  - 2.0
+  - 2.1
+  - 2.2

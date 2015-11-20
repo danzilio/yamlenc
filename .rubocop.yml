@@ -1,0 +1,7 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/fixtures/**/*'
+    - 'features'
+Metrics/LineLength:
+  Max: 160
