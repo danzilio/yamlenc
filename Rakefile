@@ -38,4 +38,4 @@ task :tag do
   end
 end
 
-task default: [:spec, :cucumber]
+task :default => [:spec, :cucumber]

@@ -1,8 +1,7 @@
 language: ruby
 sudo: false
 script:
-  - bundle exec rake spec
-  - bundle exec rake cucumber
+  - bundle exec rake
 rvm:
   - 1.8.7
   - 1.9.3
