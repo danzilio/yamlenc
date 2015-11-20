@@ -7,7 +7,7 @@ module Enc
     attr_reader :node_name, :found
 
     def initialize(argv)
-      @options = { config_file: '/etc/puppet/enc.yaml', cli_nodes: [], fail: false }
+      @options = { :config_file => '/etc/puppet/enc.yaml', :cli_nodes => [], :fail => false }
 
       optparse.parse!(argv)
 
